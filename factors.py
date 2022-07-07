@@ -133,3 +133,38 @@ def volumeIndicators(open_, high, low, close, volume):
     obv = talib.OBV(close, volume)
     return ad, adosc, obv
 
+def cycleIndicators(open_, high, low, close, volume):
+    # Hilbert Transform - Dominant Cycle Period
+    ht_dcperiod = talib.HT_DCPERIOD(close)
+    # Hilbert Transform - Dominant Cycle Phase
+    ht_dcphase = talib.HT_DCPHASE(close)
+    # Hilbert Transform - Phasor Components
+    ht_phasor = talib.HT_PHASOR(close)
+    # Hilbert Transform - SineWave
+    ht_sine = talib.HT_SINE(close)
+    # Hilbert Transform - Trend vs Cycle Mode
+    ht_trendmode = talib.HT_TRENDMODE(close)
+    
+    return ht_dcperiod, ht_dcphase, ht_phasor, ht_sine, ht_trendmode
+
+def priceTransform(open_, high, low, close, volume):
+    # Average Price
+    avgprice = talib.AVGPRICE(open_, high, low, close)
+    # Median Price
+    medprice = talib.MEDPRICE(high, low)
+    # Typical Price
+    typprice = talib.TYPPRICE(high, low, close)
+    # Weighted Close Price
+    wclprice = talib.WCLPRICE(high, low, close)
+    
+    return avgprice, medprice, typprice, wclprice
+
+def volatilityIndicators(open_, high, low, close, volume):
+    # Average True Range
+    atr = talib.ATR(high, low, close, timeperiod=14)
+    # Normalized Average True Range
+    natr = talib.NATR(high, low, close, timeperiod=14)
+    # True Range
+    trange = talib.TRANGE(high, low, close)
+    
+    return atr, natr, trange

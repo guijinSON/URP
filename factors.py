@@ -168,3 +168,139 @@ def volatilityIndicators(open_, high, low, close, volume):
     trange = talib.TRANGE(high, low, close)
     
     return atr, natr, trange
+
+def patternRecognition(open_, high, low, close, volume):
+    # Two Crows
+    cdl2crows = talib.CDL2CROWS(open_, high, low, close)
+    # Three Black Crows
+    cdl3blackrows = talib.CDL3BLACKCROWS(open_, high, low, close)
+    # Three Inside Up/Down
+    cdl3inside = talib.CDL3INSIDE(open_, high, low, close)
+    # Three-Line Strike
+    cdl3linestrike = talib.CDL3LINESTRIKE(open_, high, low, close)
+    # Three Outside Up/Down
+    cdl3outside = talib.CDL3OUTSIDE(open_, high, low, close)
+    # Three Stars In The South
+    cdl3starsinsouth = talib.CDL3STARSINSOUTH(open_, high, low, close)
+    # Three Advancing White Soldiers
+    cdl3whitesoldiers = talib.CDL3WHITESOLDIERS(open_, high, low, close)
+    # Abandoned Baby
+    cdlabandonedbaby = talib.CDLABANDONEDBABY(open_, high, low, close, penetration=0)
+    # Advance Block
+    cdladvanceblock = talib.CDLADVANCEBLOCK(open_, high, low, close)
+    # Belt-hold
+    cdlbelthold = talib.CDLBELTHOLD(open_, high, low, close)
+    # Breakaway
+    cdlbreakaway = talib.CDLBREAKAWAY(open_, high, low, close)
+    # Closing Marubozu
+    cdlclosingmarubozu = talib.CDLCLOSINGMARUBOZU(open_, high, low, close)
+    # Concealing Baby Swallow
+    cdlconcealbabyswall = talib.CDLCONCEALBABYSWALL(open_, high, low, close)
+    # Counterattack
+    cdlcounterattack = talib.CDLCOUNTERATTACK(open_, high, low, close)
+    # Dark Cloud Cover
+    cdlddarkcloudcover = talib.CDLDARKCLOUDCOVER(open_, high, low, close, penetration=0)
+    # Doji
+    cdldoji = talib.CDLDOJI(open_, high, low, close)
+    # Doji Star
+    cdldojistar = talib.CDLDOJISTAR(open_, high, low, close)
+    # Dragonfly Doji
+    cdldragonflydoji = talib.CDLDRAGONFLYDOJI(open_, high, low, close)
+    # Engulfing Pattern
+    cdlengulfing = talib.CDLENGULFING(open_, high, low, close)
+    # Evening Doji Star
+    cdleveningdojistar = talib.CDLEVENINGDOJISTAR(open_, high, low, close, penetration=0)
+    # Evening Star
+    cdleveningstar = talib.CDLEVENINGSTAR(open_, high, low, close, penetration=0)
+    # Up/Down-gap side-by-side white lines
+    cdlgapsidewhite = talib.CDLGAPSIDESIDEWHITE(open_, high, low, close)
+    # Gravestone Doji
+    cdlgravestonedoji = talib.CDLGRAVESTONEDOJI(open_, high, low, close)
+    # Hammer
+    hammer = talib.CDLHAMMER(open_, high, low, close)
+    # Hanging Man
+    hangingman = talib.CDLHANGINGMAN(open_, high, low, close)
+    # Harami Pattern
+    cdlharami = talib.CDLHARAMI(open_, high, low, close)
+    # Harami Cross Pattern
+    cdlharamiicross = talib.CDLHARAMICROSS(open_, high, low, close)
+    # High-Wave Candle
+    cdlhighwave = talib.CDLHIGHWAVE(open_, high, low, close)
+    # Hikkake Pattern
+    cdlhikkake = talib.CDLHIKKAKE(open_, high, low, close)
+    # Modified Hikkake Pattern
+    cdlhikkakemod = talib.CDLHIKKAKEMOD(open_, high, low, close)
+    # Homing Pigeon
+    cdlhomiingpigeon = talib.CDLHOMINGPIGEON(open_, high, low, close)
+    # Identical Three Crows
+    cdlidentical3crows = talib.CDLIDENTICAL3CROWS(open_, high, low, close)
+    # In-Neck Pattern
+    cdlinneck = talib.CDLINNECK(open_, high, low, close)
+    # Inverted Hammer
+    cdlinvertedhammer = talib.CDLINVERTEDHAMMER(open_, high, low, close)
+    # Kicking
+    cdlkiicking = talib.CDLKICKING(open_, high, low, close)
+    # Kicking - bull/bear determined by the longer marubozu
+    cdlkickingbylength = talib.CDLKICKINGBYLENGTH(open_, high, low, close)
+    # Ladder Bottom
+    cdlladderbottom = talib.CDLLADDERBOTTOM(open_, high, low, close)
+    # Long Legged Doji
+    cdllongleggeddoji = talib.CDLLONGLEGGEDDOJI(open_, high, low, close)
+    # Long Line Candle
+    cdllongline = talib.CDLLONGLINE(open_, high, low, close)
+    # Marubozu
+    cdlmarubozu = talib.CDLMARUBOZU(open_, high, low, close)
+    # Matching Low
+    cdlmatchinglow = talib.CDLMATCHINGLOW(open_, high, low, close)
+    # Mat Hold
+    cdlmathold = talib.CDLMATHOLD(open_, high, low, close, penetration=0)
+    # Morning Doji Star
+    cdlmorningdojistar = talib.CDLMORNINGDOJISTAR(open_, high, low, close, penetration=0)
+    # Morning Star
+    cdlmorningstar = talib.CDLMORNINGSTAR(open_, high, low, close, penetration=0)
+    # On-Neck Pattern
+    cdlonneck = talib.CDLONNECK(open_, high, low, close)
+    # Piercing Pattern
+    cdlpiercing = talib.CDLPIERCING(open_, high, low, close)
+    # Rickshaw Man
+    cdlrickshawman = talib.CDLRICKSHAWMAN(open_, high, low, close)
+    # Rising/Falling Three Methods
+    cdlriesfall3methods = talib.CDLRISEFALL3METHODS(open_, high, low, close)
+    # Separating Lines
+    cdseparatinglines = talib.CDLSEPARATINGLINES(open_, high, low, close)
+    # Shooting Star
+    cdlshootingstar = talib.CDLSHOOTINGSTAR(open_, high, low, close)
+    # Short Line Candle
+    cdlshortline = talib.CDLSHORTLINE(open_, high, low, close)
+    # Spinning Top
+    cdlspinningtop = talib.CDLSPINNINGTOP(open_, high, low, close)
+    # Stalled Pattern
+    cdlstalledpatter = talib.CDLSTALLEDPATTERN(open_, high, low, close)
+    # Stick Sandwich
+    cdlsticksandwich = talib.CDLSTICKSANDWICH(open_, high, low, close)
+    # Takuri (Dragonfly Doji with very long lower shadow)
+    cdltakuri = talib.CDLTAKURI(open_, high, low, close)
+    # Tasuki Gap
+    cdltasukigap = talib.CDLTASUKIGAP(open_, high, low, close)
+    # Thrusting Pattern
+    cdlthrusting = talib.CDLTHRUSTING(open_, high, low, close)
+    # Tristar Pattern
+    cdltristar = talib.CDLTRISTAR(open_, high, low, close)
+    # Unique 3 River
+    cdlunique3river = talib.CDLUNIQUE3RIVER(open_, high, low, close)
+    # Upside Gap Two Crows
+    cdlupsidegap2crows = talib.CDLUPSIDEGAP2CROWS(open_, high, low, close)
+    # Upside/Downside Gap Three Methods
+    cdlxsidegap3methods = talib.CDLXSIDEGAP3METHODS(open_, high, low, close)
+    
+    return cdl2crows, cdl3blackrows, cdl3inside, cdl3linestrike, cdl3outside, cdl3starsinsouth,\
+            cdl3whitesoldiers, cdlabandonedbaby, cdladvanceblock, cdlbelthold,  cdlbreakaway, \
+            cdlclosingmarubozu, cdlconcealbabyswall, cdlcounterattack, cdlddarkcloudcover, \
+            cdldoji, cdldojistar, cdldragonflydoji, hammer, hangingman, cdlharami, cdlharamiicross,\
+            cdlhighwave, cdlhikkake, cdlhikkakemod, cdlhomiingpigeon, cdlidentical3crows,\
+            cdlinneck, cdlinvertedhammer, cdlkiicking, cdlkickingbylength, cdlladderbottom, cdllongleggeddoji, \
+            cdllongline, cdlmarubozu, cdlmatchinglow, cdlmathold, cdlmorningdojistar, cdlmorningstar, \
+            cdlonneck, cdlpiercing, cdlrickshawman, cdlriesfall3methods, cdseparatinglines, \
+            cdlshootingstar, cdlshortline, cdlspinningtop, cdlstalledpatter, cdlsticksandwich, \
+            cdltakuri, cdltasukigap, cdlthrusting, cdltristar, cdlunique3river, cdlupsidegap2crows, \
+            cdlxsidegap3methods 

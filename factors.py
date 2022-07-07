@@ -63,3 +63,13 @@ def momentumIndicator(open_, high, low, close, volume):
             mdm, mom, pdi, pdm, ppo, roc, rocp, rocr, rocr1000, \
             rsi, slowk, slowd, fastk, fastd, fastkRSI, fastdRSI, \
             trix, ultsoc, willr
+
+def volumeIndicators(open_, high, low, close, volume):
+    # Chaikin A/D Line
+    ad = talib.AD(high, low, close, volume)
+    # Chaikin A/D Oscillator
+    adosc = talib.ADOSC(high, low, close, volume, fastperiod=3, slowperiod=10)
+    # On Balance Volume
+    obv = talib.OBV(close, volume)
+    return ad, adosc, obv
+

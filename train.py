@@ -1,6 +1,8 @@
 import torch
 import wandb
 import numpy as np
+from collections import Counter
+from utils import log_output_distribution
 
 def single_epoch_train(model, optimizer, trainloader, loss_func, epoch, batch_size, device, wb=True):
     running_loss = 0.0 
@@ -26,8 +28,9 @@ def single_epoch_train(model, optimizer, trainloader, loss_func, epoch, batch_si
         running_loss += loss.item()
 
     acc = (torch.argmax(output,dim=1).detach().cpu() == target.detach().cpu()).sum()/batch_size
+    d0,d1,d2,d3 = log_output_distribution(Counter(torch.argmax(output,dim=1).detach().cpu().tolist()))
     
     if wb:
-        wandb.log({'Training Accuracy':acc})
+        wandb.log({'Training Accuracy':acc, 'Class 0': d0, 'Class 1': d1, 'Class2': d2, 'Class 3':d3})
     else:
         print('[%d] Running Accuracy: %.2f' % (epoch + 1, acc)) 

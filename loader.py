@@ -1,5 +1,6 @@
 import torch 
 import numpy as np
+import talib
 from torch.utils.data import Dataset, DataLoader
 
 class StockDataset(Dataset):

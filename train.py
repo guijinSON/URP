@@ -1,7 +1,7 @@
 import torch
 import numpy as np
 
-def single_epoch_train(model, optimizer, trainloader, loss_func, epoch, batch_size, device='cuda: 0'):
+def single_epoch_train(model, optimizer, trainloader, loss_func, epoch, batch_size, device):
     running_loss = 0.0 
     
     model.train()

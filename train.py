@@ -24,4 +24,5 @@ def single_epoch_train(model, optimizer, trainloader, loss_func, epoch, batch_si
         # print statistics
         running_loss += loss.item()
 
-    print('[%d] loss: %.6f' % (epoch + 1, running_loss))   
+    acc = (torch.argmax(output,dim=1).detach().cpu() == target.detach().cpu()).sum()/batch_size
+    print('[%d] Running Accuracy: %.2f' % (epoch + 1, acc)) 

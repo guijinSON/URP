@@ -39,7 +39,7 @@ class MLP_TS_with_Head(nn.Module):
         self.MLP_LAYER_2 = nn.Linear(d_ffn,4)
 
     def forward(self,x):
-        x = self.p_enc_1d_model_sum(x)
+        #x = self.p_enc_1d_model_sum(x)
         x = self.model(x)
         x2 = self.MLP_LAYER_1(x)
         x3 = torch.permute(x2,(0,2,1))

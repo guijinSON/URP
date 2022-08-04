@@ -1,7 +1,8 @@
 import torch
+import wandb
 import numpy as np
 
-def single_epoch_train(model, optimizer, trainloader, loss_func, epoch, batch_size, device):
+def single_epoch_train(model, optimizer, trainloader, loss_func, epoch, batch_size, device, wb=True):
     running_loss = 0.0 
     
     model.train()
@@ -25,4 +26,8 @@ def single_epoch_train(model, optimizer, trainloader, loss_func, epoch, batch_si
         running_loss += loss.item()
 
     acc = (torch.argmax(output,dim=1).detach().cpu() == target.detach().cpu()).sum()/batch_size
-    print('[%d] Running Accuracy: %.2f' % (epoch + 1, acc)) 
+    
+    if wb:
+        wandb.log({'Training Accuracy':acc})
+    else:
+        print('[%d] Running Accuracy: %.2f' % (epoch + 1, acc)) 

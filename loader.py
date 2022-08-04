@@ -14,7 +14,7 @@ class StockDataset(Dataset):
         self.target = target
 
     def __len__(self):
-        return len(self.OPEN-self.span-self.target)
+        return len(self.OPEN)-self.span-self.target
 
     def __getitem__(self, idx):
         o = self.OPEN[idx : idx + self.span]

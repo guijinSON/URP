@@ -1,7 +1,7 @@
 import yfinance as yf
 import pandas as pd
 
-def import_stock_historical(ticker,START='2010-01-01',END=2021-12-31'):
+def import_stock_historical(ticker,START='2010-01-01',END='2021-12-31'):
     data = yf.download( 
             tickers = ticker, #' '.join(equity['Symbols'].values),
             start=START,
